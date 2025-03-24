@@ -29,6 +29,12 @@ h2 {
 }
 
 a {
+    margin: 20px 0.0px;
+    display: block;
+}
+
+a.button {
+    margin: 0.0px;
     text-decoration: none;
     color: #ffffff;
     background-color: #0078D7;
@@ -39,6 +45,6 @@ a {
     display: block;
 }
 
-a:hover {
+a.button:hover {
     background-color: #005a9e;
 }
