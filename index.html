@@ -1,19 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jon Christen - Software Engineer</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1 style="margin-top:0px">Jon Christen</h1>
-        <h2>Software Engineer</h2>
-        <a href="https://www.linkedin.com/in/jon-christen" target="_blank">
-            <img src="Images/LI-Logo.png" height="21px"/>
-        </a>
+    <header>
+        <h1>Jon Christen</h1>
+        <p>Software Engineer</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#tools">Tools</a>
+        <a href="#contact">Contact</a>
         <a class="button" href="Files/Resume.pdf" target="_blank">View Resume</a>
-    </div>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Write a short introduction about yourself, your background, and what you love to build.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="grid">
+
+            <!-- Project Card Example -->
+            <div class="card">
+                <img src="images/project1.png" alt="Project Screenshot" />
+                <h3>Project Title</h3>
+                <p>
+                    Brief description of the project, what technologies you used, and what problem it solves.
+                </p>
+                <video muted>
+                    <source src="Videos/CTFDemoEditor.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="card">
+                <img src="images/project2.png" alt="Project Screenshot" />
+                <h3>Another Project</h3>
+                <p>
+                    Another description. You can include links to GitHub repos or demos.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="tools">
+        <h2>Tools & Technologies</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="images/tool1.png" alt="Tool Image" />
+                <h3>Tool Name</h3>
+                <p>Description of how you use this tool in your workflow.</p>
+            </div>
+
+            <div class="card">
+                <video controls>
+                    <source src="videos/tool-demo.mp4" type="video/mp4" />
+                </video>
+                <h3>Tool Demo</h3>
+                <p>Short explanation of the tool demo shown above.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <strong>your.email@example.com</strong></p>
+        <p>GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
+        <a href="https://www.linkedin.com/in/jon-christen" target="_blank">
+            <img src="Images/LI-Logo.png" height="21px" />
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2026 Your Name. All rights reserved.</p>
+    </footer>
+
 </body>
+
 </html>
