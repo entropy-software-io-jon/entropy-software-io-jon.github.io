@@ -44,81 +44,85 @@
     <section id="projects">
         <h2>Projects</h2>
 
-        <div class="card">
-            <h3>DinoFracture</h3>
-            <p>
-                An editor and runtime fracturing library that allows for slicing and shattering of arbitrary meshes.
-            </p>
-            <div class="grid">
-                <div class="hero-visual">
-                    <div class="media-wrapper">
-                        <div class="slideshow" data-id="dinofracture">
-                            <div class="slide">
-                                <div class="video-container">
-                                    <video>
-                                        <source src="Videos/DFTrailer.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <button class="play-btn" id="playBtn">▶ Play</button>
-                                    <button class="mute-btn">🔇</button>
+        <div class="card-container">
+            <div class="card">
+                <h3>DinoFracture</h3>
+                <p class="proj-desc">
+                    An editor and runtime fracturing library that allows for slicing and shattering of arbitrary meshes.
+                </p>
+                <div class="grid">
+                    <div class="hero-visual">
+                        <div class="media-wrapper">
+                            <div class="slideshow" data-id="dinofracture">
+                                <div class="slide">
+                                    <div class="video-container">
+                                        <video>
+                                            <source src="Videos/DFTrailer.mp4" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                        <button class="play-btn" id="playBtn">▶ Play</button>
+                                        <button class="mute-btn">🔇</button>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="slide">
-                                <img src="Images/DinoFractureUI.png">
-                            </div>
+                                <div class="slide">
+                                    <img src="Images/DinoFractureUI.png">
+                                </div>
 
-                            <span class="prev" onclick="plusSlides('dinofracture', -1)">❮</span>
-                            <span class="next" onclick="plusSlides('dinofracture', 1)">❯</span>
+                                <span class="prev" onclick="plusSlides('dinofracture', -1)">❮</span>
+                                <span class="next" onclick="plusSlides('dinofracture', 1)">❯</span>
 
-                            <div class="dots">
-                                <span class="dot" onclick="currentSlide('dinofracture', 1)"></span>
-                                <span class="dot" onclick="currentSlide('dinofracture', 2)"></span>
+                                <div class="dots">
+                                    <span class="dot" onclick="currentSlide('dinofracture', 1)"></span>
+                                    <span class="dot" onclick="currentSlide('dinofracture', 2)"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="description">
-                    <ul>
-                        <li>Fracturing is done in native C++ code with an interop layer to interface with the Unity
-                            Engine.</li>
-                        <li>Fully customized UI within Unity.</li>
-                        <li>All properties are displayed via custom C++ reflection code.</li>
-                        <li>User can further tweak the neural network to change AI inputs and outputs. The existing
-                            recordings can be re-used without modification, allowing for quick iteration.</li>
-                    </ul>
+                    <div class="description">
+                        <ul>
+                            <li>Fracturing is done in native C++ code with an interop layer to interface with the Unity
+                                Engine.</li>
+                            <li>Fully customized UI within Unity.</li>
+                            <li>All properties are displayed via custom C++ reflection code.</li>
+                            <li>User can further tweak the neural network to change AI inputs and outputs. The existing
+                                recordings can be re-used without modification, allowing for quick iteration.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="card">
-            <h3>Smart Engine</h3>
-            <p>
-                Neural network based AI library. This demo showcases how you can define and train your own AI agents in
-                the
-                Unreal Engine.
-            </p>
-            <div class="grid left-text">
-                <div>
-                    <ul>
-                        <li>Built a custom tool to hand-craft training scenarios.</li>
-                        <li>User can create keyframed commands to tell how the AI should handle different situations.
-                        </li>
-                        <li>The AI is trained using a playback of each scenario. Information about each NPC's
-                            surroundings and ally's state are taken into account.</li>
-                        <li>User can further tweak the neural network to change AI inputs and outputs. The existing
-                            recordings can be re-used without modification, allowing for quick iteration.</li>
-                    </ul>
-                </div>
-                <div class="hero-visual">
-                    <div class="media-wrapper">
-                        <div class="video-container">
-                            <video>
-                                <source src="Videos/CTFDemoEditor.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <button class="play-btn" id="playBtn">▶ Play</button>
-                            <button class="mute-btn">🔇</button>
+            <div class="card">
+                <h3>Smart Engine</h3>
+                <p class="proj-desc">
+                    Neural network based AI library. This demo showcases how you can define and train your own AI agents
+                    in
+                    the
+                    Unreal Engine.
+                </p>
+                <div class="grid left-text">
+                    <div>
+                        <ul>
+                            <li>Built a custom tool to hand-craft training scenarios.</li>
+                            <li>User can create keyframed commands to tell how the AI should handle different
+                                situations.
+                            </li>
+                            <li>The AI is trained using a playback of each scenario. Information about each NPC's
+                                surroundings and ally's state are taken into account.</li>
+                            <li>User can further tweak the neural network to change AI inputs and outputs. The existing
+                                recordings can be re-used without modification, allowing for quick iteration.</li>
+                        </ul>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="media-wrapper">
+                            <div class="video-container">
+                                <video>
+                                    <source src="Videos/CTFDemoEditor.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <button class="play-btn" id="playBtn">▶ Play</button>
+                                <button class="mute-btn">🔇</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -131,7 +135,7 @@
 
         <div class="card">
             <h3>Code Generator</h3>
-            <p>
+            <p class="proj-desc">
                 Internal visual editor to convert a C++ AST to other languages.
             </p>
             <div class="grid">
@@ -160,9 +164,12 @@
                     <ul>
                         <li>Custom C++ AST built upon clang. Output is language agnostic.</li>
                         <li>WPF based UI.</li>
-                        <li>User defines blocks of verbatim text with interspersed bindings to the AST. Blocks can also call into other blocks for re-use.</li>
-                        <li>Custom conditions and variables allow for a rich language to describe how to translate the AST into code.</li>
-                        <li>Used internally to create C# Unity bindings as well as a C++ interop layer for C++ libraries.</li>
+                        <li>User defines blocks of verbatim text with interspersed bindings to the AST. Blocks can also
+                            call into other blocks for re-use.</li>
+                        <li>Custom conditions and variables allow for a rich language to describe how to translate the
+                            AST into code.</li>
+                        <li>Used internally to create C# Unity bindings as well as a C++ interop layer for C++
+                            libraries.</li>
                         <li>Next iteration uses a node / graph based editor while keeping the WYSIWYG feel.</li>
                     </ul>
                 </div>
