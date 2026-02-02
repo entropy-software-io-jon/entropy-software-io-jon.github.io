@@ -123,6 +123,14 @@ p {
     .hero-visual {
         flex: 100%;
     }
+
+    .description {
+        margin-top: 10px;
+    }
+
+    .proj-desc {
+        margin-bottom: 10px;
+    }
 }
 
 ul {
