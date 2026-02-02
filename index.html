@@ -42,13 +42,31 @@
             </p>
             <div class="grid">
                 <div class="hero-visual">
-                    <div class="video-container">
-                        <video>
-                            <source src="Videos/DFTrailer.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <button class="play-btn" id="playBtn">▶ Play</button>
-                        <button class="mute-btn">🔇</button>
+                    <div class="media-wrapper">
+                        <div class="slideshow" data-id="dinofracture">
+                            <div class="slide">
+                                <div class="video-container">
+                                    <video>
+                                        <source src="Videos/DFTrailer.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <button class="play-btn" id="playBtn">▶ Play</button>
+                                    <button class="mute-btn">🔇</button>
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <img src="Images/DinoFractureUI.png">
+                            </div>
+
+                            <span class="prev" onclick="plusSlides('dinofracture', -1)">❮</span>
+                            <span class="next" onclick="plusSlides('dinofracture', 1)">❯</span>
+
+                            <div class="dots">
+                                <span class="dot" onclick="currentSlide('dinofracture', 1)"></span>
+                                <span class="dot" onclick="currentSlide('dinofracture', 2)"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="description">
@@ -84,13 +102,15 @@
                     </ul>
                 </div>
                 <div class="hero-visual">
-                    <div class="video-container">
-                        <video>
-                            <source src="Videos/CTFDemoEditor.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <button class="play-btn" id="playBtn">▶ Play</button>
-                        <button class="mute-btn">🔇</button>
+                    <div class="media-wrapper">
+                        <div class="video-container">
+                            <video>
+                                <source src="Videos/CTFDemoEditor.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <button class="play-btn" id="playBtn">▶ Play</button>
+                            <button class="mute-btn">🔇</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -135,44 +155,82 @@
 </body>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  // Select all video containers
-  const containers = document.querySelectorAll(".video-container");
+    document.addEventListener("DOMContentLoaded", () => {
+        // Select all video containers
+        const containers = document.querySelectorAll(".video-container");
 
-  containers.forEach(container => {
-    const video = container.querySelector("video");
-    const playBtn = container.querySelector(".play-btn");
-    const muteBtn = container.querySelector(".mute-btn");
+        containers.forEach(container => {
+            const video = container.querySelector("video");
+            const playBtn = container.querySelector(".play-btn");
+            const muteBtn = container.querySelector(".mute-btn");
 
-    // Default state: muted
-    video.muted = true;
+            // Default state: muted
+            video.muted = true;
 
-    // Play video on button click
-    playBtn.addEventListener("click", () => {
-      video.play();
-      playBtn.classList.add("hidden");
+            // Play video on button click
+            playBtn.addEventListener("click", () => {
+                video.play();
+                playBtn.classList.add("hidden");
+            });
+
+            // Show button again when video ends
+            video.addEventListener("ended", () => {
+                playBtn.classList.remove("hidden");
+            });
+
+            // Optional: Pause video if clicked directly
+            video.addEventListener("click", () => {
+                if (!video.paused) {
+                    video.pause();
+                    playBtn.classList.remove("hidden");
+                }
+            });
+
+            // Mute / Unmute toggle
+            muteBtn.addEventListener("click", () => {
+                video.muted = !video.muted;
+                muteBtn.textContent = video.muted ? "🔇" : "🔊";
+            });
+        });
     });
+</script>
 
-    // Show button again when video ends
-    video.addEventListener("ended", () => {
-      playBtn.classList.remove("hidden");
-    });
+<script>
+    let slideIndices = {};
 
-    // Optional: Pause video if clicked directly
-    video.addEventListener("click", () => {
-      if (!video.paused) {
-        video.pause();
-        playBtn.classList.remove("hidden");
-      }
-    });
+    function initSlideshows() {
+        const slideshows = document.querySelectorAll('.slideshow');
+        slideshows.forEach((slideshow, index) => {
+            const id = slideshow.getAttribute('data-id') || index;
+            slideIndices[id] = 1;
+            showSlides(id, 1);
+        });
+    }
 
-    // Mute / Unmute toggle
-    muteBtn.addEventListener("click", () => {
-      video.muted = !video.muted;
-      muteBtn.textContent = video.muted ? "🔇" : "🔊";
-    });
-  });
-});
+    function plusSlides(id, n) {
+        showSlides(id, slideIndices[id] += n);
+    }
+
+    function currentSlide(id, n) {
+        showSlides(id, slideIndices[id] = n);
+    }
+
+    function showSlides(id, n) {
+        const slideshow = document.querySelector(`.slideshow[data-id="${id}"]`);
+        const slides = slideshow.querySelectorAll('.slide');
+        const dots = slideshow.querySelectorAll('.dot');
+
+        if (n > slides.length) slideIndices[id] = 1;
+        if (n < 1) slideIndices[id] = slides.length;
+
+        slides.forEach(s => s.style.display = "none");
+        dots.forEach(d => d.classList.remove("active-dot"));
+
+        slides[slideIndices[id] - 1].style.display = "block";
+        dots[slideIndices[id] - 1].classList.add("active-dot");
+    }
+
+    window.onload = initSlideshows;
 </script>
 
 </html>
