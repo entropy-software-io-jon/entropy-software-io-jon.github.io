@@ -22,6 +22,7 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#tools">Tools</a>
+        <a href="#code">Code Samples</a>
         <a href="#contact">Contact</a>
         <a class="button" href="Files/Resume.pdf" target="_blank">View Resume</a>
     </nav>
@@ -82,12 +83,13 @@
                     </div>
                     <div class="description">
                         <ul>
-                            <li>Fracturing is done in native C++ code with an interop layer to interface with the Unity
-                                Engine.</li>
-                            <li>Fully customized UI within Unity.</li>
-                            <li>All properties are displayed via custom C++ reflection code.</li>
-                            <li>User can further tweak the neural network to change AI inputs and outputs. The existing
-                                recordings can be re-used without modification, allowing for quick iteration.</li>
+                            <li>Fracturing: C++<br>Unity Integration: C#</li>
+                            <li>UI properties are pulled dynamically from C++ code via a custom reflection library.</li>
+                            <li>Supports shattering and slicing of static meshes and skinned meshes (animated meshes
+                                with bones).</li>
+                            <li>Extendable in Unity with user defined modules written in C#</li>
+                            <li>Allows for runtime fracturing and edit time fracturing</li>
+                            <li>Wide variety of options, such as the ability to break off chunks at a time.</li>
                         </ul>
                     </div>
                 </div>
@@ -102,14 +104,15 @@
                 <div class="grid left-text">
                     <div class="description">
                         <ul>
+                            <li>Graph Engine: C++<br>Unity Integration: C#<br>Unreal Integration: C++</li>
+                            <li>Neural networks defined in human editable json code.</li>
                             <li>Built a custom tool to hand-craft training scenarios.</li>
-                            <li>User can create keyframed commands to tell how the AI should handle different
+                            <li>Users create keyframed commands to tell how the AI should handle different
                                 situations.
                             </li>
-                            <li>The AI is trained using a playback of each scenario. Information about each NPC's
-                                surroundings and ally's state are taken into account.</li>
-                            <li>User can further tweak the neural network to change AI inputs and outputs. The existing
-                                recordings can be re-used without modification, allowing for quick iteration.</li>
+                            <li>The AI is trained using a playback of each scenario.</li>
+                            <li>Information about each NPC's surroundings and ally's state are taken into account.</li>
+                            <li>Iterate by tweaking graph and re-training on existing scenarios.</li>
                         </ul>
                     </div>
                     <div class="hero-visual">
@@ -162,14 +165,11 @@
                     </div>
                     <div class="description">
                         <ul>
-                            <li>Custom C++ AST built upon clang. Output is language agnostic.</li>
-                            <li>WPF based UI.</li>
-                            <li>User defines blocks of verbatim text with interspersed bindings to the AST. Blocks can
-                                also call into other blocks for re-use.</li>
-                            <li>Custom conditions and variables allow for a rich language to describe how to translate
-                                the AST into code.</li>
-                            <li>Used internally to create C# Unity bindings as well as a C++ interop layer for C++
-                                libraries.</li>
+                            <li>Parsing Layer: C++ & Clang<br>UI: WPF (C#)</li>
+                            <li>Define code blocks that contain verbatim output code.</li>
+                            <li>Code blocks can contain references to AST properties and other code blocks.</li>
+                            <li>User defined conditions allow selective output based on AST</li>
+                            <li>Internally used for C# and C++ interop layers to Unity.</li>
                             <li>Next iteration uses a node / graph based editor while keeping the WYSIWYG feel.</li>
                         </ul>
                     </div>
@@ -217,11 +217,13 @@
                     </div>
                     <div class="description">
                         <ul>
-                            <li>Realtime logging of user-defined events in C++ or C#.</li>
-                            <li>Native C++ engine handles millions of events per second.</li>
+                            <li>Event Recording: C++<br>Unity Integration: C#<br>Unity UI: New UI Toolkit</li>
+                            <li>Recording engine handles millions of events per second.</li>
+                            <li>Event recording uses a multi-writer, single reader container.</li>
                             <li>Customizable dashboard in Unity.</li>
                             <li>Allows for visual playback of scenarios directly inside Unity for debugging.</li>
                             <li>Record in the built game and load recorded data inside Unity later.</li>
+                            <li>Record simple events. Heavy processing and event translation done in UI.</li>
                         </ul>
                     </div>
                 </div>
@@ -229,27 +231,43 @@
         </div>
     </section>
 
+    <section id="code">
+        <h2>Code Samples</h2>
+        <h3>
+            C++11 based reflection library.
+        </h3>
+        <div class="description">
+            <ul>
+                <li>
+                    compile-time reflection and runtime reflection.
+                </li>
+                <li>
+                    Single macro to enable reflection on classes, fields, and methods.
+                </li>
+                <li>
+                    <a href="https://github.com/entropy-software-io/reflection">View on GitHub</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email: <strong>your.email@example.com</strong></p>
-        <p>GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
-        <a href="https://www.linkedin.com/in/jon-christen" target="_blank">
-            <img src="Images/LI-Logo.png" height="21px" />
-        </a>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/jon-christen">https://www.linkedin.com/in/jon-christen</a></p>
     </section>
 
     <footer>
-        <p>© 2026 Your Name. All rights reserved.</p>
+        <p>© 2026 Jon Christen. All rights reserved.</p>
     </footer>
 
     <!-- Fullscreen Overlay -->
-    <div id="mediaOverlay" class="overlay">
-        <div class="overlay-content">
-            <img id="overlayImage" style="display:none;">
-            <video id="overlayVideo" controls style="display:none;"></video>
-        </div>
-        <span class="close-btn" onclick="closeOverlay()">×</span>
-    </div>
+    <div id=" mediaOverlay" class="overlay">
+                <div class="overlay-content">
+                    <img id="overlayImage" style="display:none;">
+                    <video id="overlayVideo" controls style="display:none;"></video>
+                </div>
+                <span class="close-btn" onclick="closeOverlay()">×</span>
+                </div>
 
 </body>
 

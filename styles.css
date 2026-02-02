@@ -144,8 +144,12 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin: 0px;
+    margin-top: 15px;
     font-family: 'Poppins', sans-serif;
+}
+
+.card ul {
+    margin: 0px;
 }
 
 li {
