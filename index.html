@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <body>
     <header>
         <h1>Jon Christen</h1>
@@ -32,29 +35,65 @@
     <section id="projects">
         <h2>Projects</h2>
 
-        <div class="grid">
-
-            <!-- Project Card Example -->
-            <div class="card">
-                <img src="images/project1.png" alt="Project Screenshot" />
-                <h3>Project Title</h3>
-                <p>
-                    Brief description of the project, what technologies you used, and what problem it solves.
-                </p>
-                <video muted>
-                    <source src="Videos/CTFDemoEditor.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
+        <div class="card">
+            <h3>DinoFracture</h3>
+            <p>
+                An editor and runtime fracturing library that allows for slicing and shattering of arbitrary meshes.
+            </p>
+            <div class="grid">
+                <div class="hero-visual">
+                    <div class="video-container">
+                        <video>
+                            <source src="Videos/DFTrailer.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="play-btn" id="playBtn">▶ Play</button>
+                        <button class="mute-btn">🔇</button>
+                    </div>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Fracturing is done in native C++ code with an interop layer to interface with the Unity
+                            Engine.</li>
+                        <li>Fully customized UI within Unity.</li>
+                        <li>All properties are displayed via custom C++ reflection code.</li>
+                        <li>User can further tweak the neural network to change AI inputs and outputs. The existing
+                            recordings can be re-used without modification, allowing for quick iteration.</li>
+                    </ul>
+                </div>
             </div>
+        </div>
 
-            <div class="card">
-                <img src="images/project2.png" alt="Project Screenshot" />
-                <h3>Another Project</h3>
-                <p>
-                    Another description. You can include links to GitHub repos or demos.
-                </p>
+        <div class="card">
+            <h3>Smart Engine</h3>
+            <p>
+                Neural network based AI library. This demo showcases how you can define and train your own AI agents in
+                the
+                Unreal Engine.
+            </p>
+            <div class="grid left-text">
+                <div>
+                    <ul>
+                        <li>Built a custom tool to hand-craft training scenarios.</li>
+                        <li>User can create keyframed commands to tell how the AI should handle different situations.
+                        </li>
+                        <li>The AI is trained using a playback of each scenario. Information about each NPC's
+                            surroundings and ally's state are taken into account.</li>
+                        <li>User can further tweak the neural network to change AI inputs and outputs. The existing
+                            recordings can be re-used without modification, allowing for quick iteration.</li>
+                    </ul>
+                </div>
+                <div class="hero-visual">
+                    <div class="video-container">
+                        <video>
+                            <source src="Videos/CTFDemoEditor.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="play-btn" id="playBtn">▶ Play</button>
+                        <button class="mute-btn">🔇</button>
+                    </div>
+                </div>
             </div>
-
         </div>
     </section>
 
@@ -94,5 +133,46 @@
     </footer>
 
 </body>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all video containers
+  const containers = document.querySelectorAll(".video-container");
+
+  containers.forEach(container => {
+    const video = container.querySelector("video");
+    const playBtn = container.querySelector(".play-btn");
+    const muteBtn = container.querySelector(".mute-btn");
+
+    // Default state: muted
+    video.muted = true;
+
+    // Play video on button click
+    playBtn.addEventListener("click", () => {
+      video.play();
+      playBtn.classList.add("hidden");
+    });
+
+    // Show button again when video ends
+    video.addEventListener("ended", () => {
+      playBtn.classList.remove("hidden");
+    });
+
+    // Optional: Pause video if clicked directly
+    video.addEventListener("click", () => {
+      if (!video.paused) {
+        video.pause();
+        playBtn.classList.remove("hidden");
+      }
+    });
+
+    // Mute / Unmute toggle
+    muteBtn.addEventListener("click", () => {
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? "🔇" : "🔊";
+    });
+  });
+});
+</script>
 
 </html>
