@@ -228,15 +228,15 @@ video {
     color: white;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 11px;
     text-align: center;
     align-content: center;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 50%;
     transform: translateY(-50%);
     user-select: none;
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
 }
 
 .prev {
@@ -255,8 +255,13 @@ video {
 
 /* Slide dots */
 .dots {
+    position: absolute;
+    justify-self: center;
+    bottom: 10px;
     text-align: center;
     margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
 }
 
 .dot {
@@ -264,13 +269,27 @@ video {
     height: 12px;
     width: 12px;
     margin: 0 4px;
-    background-color: #bbb;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     display: inline-block;
 }
 
 .active-dot {
-    background-color: #444;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.mobile .media-wrapper .prev,
+.mobile .media-wrapper .next,
+.mobile .media-wrapper .dots,
+.mobile .media-wrapper .mute-btn {
+    opacity: 1 !important;
+}
+
+.mobile .prev,
+.mobile .next {
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
 }
 
 /* Wrapper controls visibility */
@@ -293,4 +312,45 @@ video {
 .media-wrapper:hover .dots,
 .media-wrapper:hover .mute-btn {
     opacity: 1;
+}
+
+/* Fullscreen overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.overlay-content {
+    display: flex;
+    max-width: 95%;
+    max-height: 90%;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Centered media */
+.overlay-content img,
+.overlay-content video {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
 }
