@@ -129,22 +129,44 @@
     <section id="tools">
         <h2>Tools & Technologies</h2>
 
-        <div class="grid">
+        <div class="card">
+            <h3>Code Generator</h3>
+            <p>
+                Internal visual editor to convert a C++ AST to other languages.
+            </p>
+            <div class="grid">
+                <div class="hero-visual">
+                    <div class="media-wrapper">
+                        <div class="slideshow" data-id="codegen">
+                            <div class="slide">
+                                <img src="Images/CodeGen1.png">
+                            </div>
 
-            <div class="card">
-                <img src="images/tool1.png" alt="Tool Image" />
-                <h3>Tool Name</h3>
-                <p>Description of how you use this tool in your workflow.</p>
+                            <div class="slide">
+                                <img src="Images/CodeGen2.png">
+                            </div>
+
+                            <span class="prev" onclick="plusSlides('codegen', -1)">❮</span>
+                            <span class="next" onclick="plusSlides('codegen', 1)">❯</span>
+
+                            <div class="dots">
+                                <span class="dot" onclick="currentSlide('codegen', 1)"></span>
+                                <span class="dot" onclick="currentSlide('codegen', 2)"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Custom C++ AST built upon clang. Output is language agnostic.</li>
+                        <li>WPF based UI.</li>
+                        <li>User defines blocks of verbatim text with interspersed bindings to the AST. Blocks can also call into other blocks for re-use.</li>
+                        <li>Custom conditions and variables allow for a rich language to describe how to translate the AST into code.</li>
+                        <li>Used internally to create C# Unity bindings as well as a C++ interop layer for C++ libraries.</li>
+                        <li>Next iteration uses a node / graph based editor while keeping the WYSIWYG feel.</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="card">
-                <video controls>
-                    <source src="videos/tool-demo.mp4" type="video/mp4" />
-                </video>
-                <h3>Tool Demo</h3>
-                <p>Short explanation of the tool demo shown above.</p>
-            </div>
-
         </div>
     </section>
 
