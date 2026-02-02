@@ -101,20 +101,7 @@
                     Neural network based AI library. This demo showcases how you can define and train your own AI agents
                     in the Unreal Engine.
                 </p>
-                <div class="grid left-text">
-                    <div class="description">
-                        <ul>
-                            <li>Graph Engine: C++<br>Unity Integration: C#<br>Unreal Integration: C++</li>
-                            <li>Neural networks defined in human editable json code.</li>
-                            <li>Built a custom tool to hand-craft training scenarios.</li>
-                            <li>Users create keyframed commands to tell how the AI should handle different
-                                situations.
-                            </li>
-                            <li>The AI is trained using a playback of each scenario.</li>
-                            <li>Information about each NPC's surroundings and ally's state are taken into account.</li>
-                            <li>Iterate by tweaking graph and re-training on existing scenarios.</li>
-                        </ul>
-                    </div>
+                <div class="grid">
                     <div class="hero-visual">
                         <div class="media-wrapper">
                             <div class="video-container">
@@ -126,6 +113,18 @@
                                 <button class="mute-btn">🔇</button>
                             </div>
                         </div>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>Graph Engine: C++<br>Unity Integration: C#<br>Unreal Integration: C++</li>
+                            <li>Built a custom tool to hand-craft training scenarios.</li>
+                            <li>Users create keyframed commands to tell how the AI should handle different
+                                situations.
+                            </li>
+                            <li>User defines what input data to feed into the AI graph</li>
+                            <li>The AI is trained using a playback of all scenarios.</li>
+                            <li>Iterate by tweaking graph and re-training on existing scenarios.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -261,13 +260,13 @@
     </footer>
 
     <!-- Fullscreen Overlay -->
-    <div id=" mediaOverlay" class="overlay">
-                <div class="overlay-content">
-                    <img id="overlayImage" style="display:none;">
-                    <video id="overlayVideo" controls style="display:none;"></video>
-                </div>
-                <span class="close-btn" onclick="closeOverlay()">×</span>
-                </div>
+    <div id="mediaOverlay" class="overlay">
+        <div class="overlay-content">
+            <img id="overlayImage" style="display:none;">
+            <video id="overlayVideo" controls style="display:none;"></video>
+        </div>
+        <span class="close-btn" onclick="closeOverlay()">×</span>
+    </div>
 
 </body>
 

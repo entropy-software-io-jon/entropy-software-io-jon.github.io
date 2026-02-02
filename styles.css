@@ -119,6 +119,7 @@ p {
 @media (max-width: 800px) {
     .grid {
         flex-direction: column;
+        align-items: baseline;
         gap: 0px;
     }
 
@@ -137,6 +138,28 @@ p {
     .proj-desc {
         margin-bottom: 10px;
     }
+}
+
+.mobile .grid {
+    flex-direction: column;
+    align-items: baseline;
+    gap: 0px;
+}
+
+.mobile .left-text {
+    flex-direction: column-reverse;
+}
+
+.mobile .hero-visual {
+    flex: 100%;
+}
+
+.mobile .description {
+    margin-top: 10px;
+}
+
+.mobile .proj-desc {
+    margin-bottom: 10px;
 }
 
 ul {
@@ -266,22 +289,26 @@ video {
 /* Slide dots */
 .dots {
     position: absolute;
+    display: flex;
     justify-self: center;
+    align-items: center;
     bottom: 10px;
-    text-align: center;
-    margin-top: 10px;
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 5px;
+    padding: 6px;
+    gap: 8px;
 }
 
 .dot {
     cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 0 4px;
+    height: 7px;
+    width: 7px;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    display: inline-block;
+}
+
+.mobile .dots {
+    bottom: 5px;
 }
 
 .active-dot {
