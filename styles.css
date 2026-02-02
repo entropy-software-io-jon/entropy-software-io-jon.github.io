@@ -4,7 +4,6 @@ a.button {
     background-color: #0078D7;
     padding: 7px 10px;
     border-radius: 5px;
-    font-size: 1.1em;
     transition: background-color 0.3s ease;
 }
 
@@ -14,8 +13,8 @@ a.button:hover {
 
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #cccccc;
+    font-family: 'Montserrat', sans-serif;
+    background: #d1d1d1;
     color: #333;
 }
 
@@ -30,6 +29,7 @@ nav {
     background: #444;
     padding: 15px;
     text-align: center;
+    font-family: 'Inter', sans-serif;
 }
 
 nav a {
@@ -53,23 +53,24 @@ h2 {
     border-bottom: 3px solid #444;
     padding-bottom: 5px;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.6em;
     margin-bottom: 40px;
 }
 
 h3 {
     margin: 0 0;
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.5em;
 }
 
 p {
-    margin: 10px 0px;
+    margin: 15px 0px;
+    font-size: 1.1em;
 }
 
 .proj-desc {
     margin: 5px 0px;
-    font-size: 0.9em;
+    font-size: 1.0em;
     font-weight: 300;
 }
 
@@ -84,7 +85,7 @@ p {
 .left-text {}
 
 .card {
-    background: rgb(238, 238, 238);
+    background: rgb(241, 241, 241);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -126,11 +127,14 @@ p {
 
 ul {
     padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
 }
 
 li {
-    margin-top: 15px;
-    margin-bottom: 15px;
     list-style-type: none;
 }
 
